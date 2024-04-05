@@ -35,6 +35,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
 /**
  * An immutable list of {@link Integer} values backed by an array of
  * {@code int}s.
@@ -112,7 +115,7 @@ public class ImmutableIntList extends FlatLists.AbstractFlatList<Integer> {
     return Arrays.hashCode(ints);
   }
 
-  @Override public boolean equals(Object obj) {
+  @Override public boolean equals(@Nullable Object obj) {
     return this == obj
         || obj instanceof ImmutableIntList
         ? Arrays.equals(ints, ((ImmutableIntList) obj).ints)

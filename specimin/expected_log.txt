@@ -1,0 +1,3 @@
+ImmutableIntList.java:120: error: [contracts.conditional.postcondition.not.satisfied] the conditional postcondition about 'EnsuresNonNullIf' at this return statement is not satisfied
+    return this == obj
+    ^

@@ -1,0 +1,26 @@
+plugins {
+    id 'java-library'
+    id 'org.checkerframework' version '0.6.37'
+}
+
+apply plugin: 'org.checkerframework'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+repositories {
+    mavenCentral()
+}
+checkerFramework {
+     checkers = [
+            'org.checkerframework.checker.nullness.NullnessChecker'
+    ]
+    excludeTests = true
+    incrementalize = false
+}
+dependencies {
+  compileOnly 'org.checkerframework:checker-qual:3.6.0'
+  checkerFramework 'org.checkerframework:checker:3.6.0'
+}
